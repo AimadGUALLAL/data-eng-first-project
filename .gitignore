@@ -10,6 +10,9 @@ airflow/__pycache__/
 
 # Python
 __pycache__/
+*.pyc 
+*.pyo 
+*.pyd 
 *.py[cod]
 *$py.class
 *.so
@@ -18,4 +21,6 @@ venv/
 env/
 ENV/
 .venv
-Test_Env
+Test_Env/
+.env/
+.Test_Env/

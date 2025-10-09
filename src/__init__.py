@@ -4,6 +4,6 @@ Crypto Data Pipeline Package
 __version__ = '1.0.0'
 __author__ = '3imad'
 
-from src.pipeline import CryptoDataPipeline
+from src.pipeline import DataCollectorWithDedup
 
-__all__ = ['CryptoDataPipeline']
+__all__ = ['DataCollectorWithDedup']
