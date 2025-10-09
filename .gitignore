@@ -7,3 +7,15 @@ airflow/*.db
 airflow/*.pid
 airflow/airflow.cfg
 airflow/__pycache__/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+Test_Env
