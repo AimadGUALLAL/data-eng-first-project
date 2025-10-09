@@ -1,0 +1,9 @@
+.env
+logs/
+logs/*.log
+# Airflow
+airflow/logs/
+airflow/*.db
+airflow/*.pid
+airflow/airflow.cfg
+airflow/__pycache__/
