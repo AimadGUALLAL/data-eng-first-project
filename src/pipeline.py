@@ -4,7 +4,6 @@ Main data collection pipeline orchestrator
 import logging
 import time
 import json
-import schedule
 import pandas as pd
 from datetime import datetime
 from io import StringIO
@@ -78,6 +77,10 @@ class DataCollectorWithDedup:
             content_type='text/csv'
         )
         logger.info(f"✓ Uploadé {len(df)} lignes vers {s3_key}")
+
+
+
+
 
 
 
@@ -250,10 +253,3 @@ def collect_binance_ohlcv(**context):
     context['task_instance'].xcom_push(key='ohlcv_count', value=len(df))
     
     return f"Collecté {len(df)} bougies"
-
-
-
-if __name__ == '__main__':
-    print(collect_coingecko_prices())
-    print(collect_binance_tickers())
-    print(collect_binance_ohlcv())
