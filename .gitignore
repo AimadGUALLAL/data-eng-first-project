@@ -25,3 +25,6 @@ ENV/
 Test_Env/
 .env/
 .Test_Env/
+
+#DOCKER
+.dockerignore

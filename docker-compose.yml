@@ -19,7 +19,11 @@ services:
 
   # Airflow Webserver
   airflow-webserver:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: apache/airflow:2.8.0-python3.11
+    container_name: crypto-airflow-webserver
     depends_on:
       postgres:
         condition: service_healthy
@@ -66,6 +70,9 @@ services:
 
   # Airflow Scheduler
   airflow-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: apache/airflow:2.8.0-python3.11
     depends_on:
       postgres:
@@ -78,7 +85,7 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
-      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION:-us-east-1}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
