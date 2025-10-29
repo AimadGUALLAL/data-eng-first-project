@@ -1,3 +1,9 @@
+.env
+.env.local
+.env.production
+.env.*.local
+*.env
+*.sql
 .sql
 .env
 .env.production
@@ -32,3 +38,31 @@ Test_Env/
 
 #DOCKER
 .dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database
+*.db
+*.sqlite3
+
+# Secrets and credentials
+secrets/
+*.pem
+*.key
+*.crt
+
+# Backup files
+*.bak
+*.backup
+backup.sql
